@@ -7,3 +7,15 @@ spec:
     - name: nginx
       image: nginx
 
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sample2
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+    - name: mongodb
+      image: mongo
+
