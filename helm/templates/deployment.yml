@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: {{ .Values.appName }}
   labels:
     app: guestbook
-    tier: frontend-deploy
+    tier: {{ .Values.appName }}-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      tier: frontend-deploy
+      tier: {{ .Values.appName }}-deploy
   template:
     metadata:
       labels:
-        tier: frontend-deploy
+        tier: {{ .Values.appName }}-deploy
     spec:
       containers:
       - name: nginx
