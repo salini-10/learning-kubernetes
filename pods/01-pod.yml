@@ -52,6 +52,7 @@ spec:
   containers:
     - name: centos
       image: centos:7
+      command: ["sleep", "10000"]
       env:
         - name: URL
           value : example.com
