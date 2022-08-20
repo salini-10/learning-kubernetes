@@ -4,16 +4,16 @@ metadata:
   name: frontend
   labels:
     app: guestbook
-    tier: frontend
+    tier: frontend-rs
 spec:
   replicas: 3
   selector:
     matchLabels:
-      tier: frontend
+      tier: frontend-rs
   template:
     metadata:
       labels:
-        tier: frontend
+        tier: frontend-rs
     spec:
       containers:
       - name: nginx
@@ -25,16 +25,16 @@ metadata:
   name: frontend
   labels:
     app: guestbook
-    tier: frontend
+    tier: frontend-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      tier: frontend
+      tier: frontend-deploy
   template:
     metadata:
       labels:
-        tier: frontend
+        tier: frontend-deploy
     spec:
       containers:
       - name: nginx
