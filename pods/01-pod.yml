@@ -56,6 +56,29 @@ spec:
       env:
         - name: URL
           value : example.com
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: configmap1
+data:
+  URL: example.com
+  SUBDOMAIN: sample
+  FQDN: sample.example.com
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sample6
+spec:
+  containers:
+    - name: centos
+      image: centos:7
+      command: ["sleep", "10000"]
+      envFrom:
+        - configMapRef:
+            name: configmap1
+
 
 
 
