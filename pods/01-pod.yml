@@ -43,3 +43,18 @@ spec:
       resources:
         requests:
           cpu: 5000
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sample5
+spec:
+  containers:
+    - name: centos
+      image: centos:7
+      env:
+        - name: URL
+          value : example.com
+
+
+
