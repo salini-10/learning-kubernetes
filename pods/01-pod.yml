@@ -78,7 +78,27 @@ spec:
       envFrom:
         - configMapRef:
             name: configmap1
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: secret1
+data:
+  dbUsername: YWRtaW4x
+  dbPassword: YWRtaW4xMjM0
 
-
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sample7
+spec:
+  containers:
+    - name: centos
+      image: centos:7
+      command: ["sleep", "10000"]
+      envFrom:
+        - secretRef:
+            name: secret1
 
 
