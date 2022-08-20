@@ -114,6 +114,13 @@ spec:
     - /bin/sh
     - -c
     - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600
+    readinessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 5
+      periodSeconds: 5
     livenessProbe:
       exec:
         command:
@@ -121,4 +128,5 @@ spec:
         - /tmp/healthy
       initialDelaySeconds: 5
       periodSeconds: 5
+
 
