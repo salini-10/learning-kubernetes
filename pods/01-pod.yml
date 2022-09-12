@@ -96,7 +96,7 @@ spec:
             name: secret1
 
 ---
-api Version: v1
+apiVersion: v1
 kind: Pod
 metadata:
   name: sample8
