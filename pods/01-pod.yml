@@ -102,8 +102,8 @@ metadata:
   name: sample8
 spec:
   containers:
-    - name: liveliness
-      image: k8s.gcr.io/busyox
+    - name: liveness
+      image: k8s.gcr.io/busybox
       args:
       - /bin/bash
       - -c
