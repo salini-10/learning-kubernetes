@@ -99,7 +99,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sample9
+  name: sample10
 spec:
   containers:
     - name: liveness
