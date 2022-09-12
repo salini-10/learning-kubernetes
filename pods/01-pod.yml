@@ -105,7 +105,7 @@ spec:
     - name: liveness
       image: k8s.gcr.io/busybox
       args:
-      - /bin/bash
+      - /bin/sh
       - -c
       - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600
       livenessProbe:
