@@ -95,3 +95,23 @@ spec:
         - secretRef:
             name: secret1
 
+---
+api Version: v1
+kind: Pod
+metadata:
+  name: sample8
+spec:
+  containers:
+    - name: liveliness
+      image: k8s.gcr.io/busyox
+      args:
+      - /bin/bash
+      - -c
+      - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600
+      livenessProbe:
+        exec:
+          command:
+          - cat
+          - /tmp/healthy
+        initialDelaySeconds: 5
+        periodSeconds: 5
