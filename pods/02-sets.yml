@@ -20,7 +20,7 @@ spec:
         image: nginx:1.16
 ---
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: frontend
   labels:
