@@ -1,41 +1,20 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Replicaset
 metadata:
   name: frontend
   labels:
     app: guestbook
-    tier: frontend-rs
+    tier: frontend
 spec:
   replicas: 3
   selector:
-    matchLabels:
-      tier: frontend-rs
+    matchlabels:
+      tier: frontend
   template:
     metadata:
       labels:
-        tier: frontend-rs
+        tier: frontend
     spec:
-      containers:
-      - name: nginx
-        image: nginx:1.18
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: frontend
-  labels:
-    app: guestbook
-    tier: frontend-deploy
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      tier: frontend-deploy
-  template:
-    metadata:
-      labels:
-        tier: frontend-deploy
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.18
+     containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
